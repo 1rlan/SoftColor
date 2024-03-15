@@ -13,11 +13,20 @@ let package = Package(
             name: "SoftColor",
             targets: ["SoftColor"]
         ),
+        .library(
+            name: "SoftColorAnalyzer",
+            targets: ["SoftColorAnalyzer"]
+        ),
     ],
     targets: [
         .target(
             name: "SoftColor",
-            path: "Sources"
+            dependencies: ["SoftColorAnalyzer"],
+            path: "Sources/SoftColor"
+        ),
+        .target(
+            name: "SoftColorAnalyzer",
+            path: "Sources/SoftColorAnalyzer"
         ),
     ],
     swiftLanguageVersions: [
