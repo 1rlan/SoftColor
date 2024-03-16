@@ -1,7 +1,7 @@
 //
 //  MonochromeAnalyzer.swift
 //
-//  Created by Irlan Abushakhmanov on 15.11.2023.
+//  Created by Irlan Abushakhmanov 
 //
 
 import SwiftUI
@@ -9,11 +9,13 @@ import SwiftUI
 public protocol MonochromeAnalyzer {
     var mainColor: Color { get }
 
-    func analyze()
+    func analyze(shouldSkip: Bool, file: String)
 }
 
 public extension MonochromeAnalyzer {
-    func analyze() {
-        fatalError()
+    func analyze(shouldSkip: Bool = false, file: String = #function) {
+        guard !shouldSkip else { return }
+        
+        _ = ColorAnalyzer(state: .monochrome(mainColor: mainColor), file: file)
     }
 }

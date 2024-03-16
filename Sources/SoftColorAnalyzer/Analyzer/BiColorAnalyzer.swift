@@ -1,7 +1,7 @@
 //
 //  BiColorAnalyzer.swift
 //
-//  Created by Irlan Abushakhmanov on 15.11.2023.
+//  Created by Irlan Abushakhmanov
 //
 
 import SwiftUI
@@ -10,11 +10,13 @@ public protocol BiColorAnalyzer {
     var mainColor: Color { get }
     var secondaryColor: Color { get }
 
-    func analyze()
+    func analyze(shouldSkip: Bool, file: String)
 }
 
 public extension BiColorAnalyzer {
-    func analyze() {
-        fatalError()
+    func analyze(shouldSkip: Bool = false, file: String = #file) {
+        guard !shouldSkip else { return }
+
+        _ = ColorAnalyzer(state: .biColor(mainColor: mainColor, secondaryColor: secondaryColor), file: file)
     }
 }
