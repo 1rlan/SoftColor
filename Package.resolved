@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "XCGLogger",
+        "repositoryURL": "https://github.com/XCGLogger/XCGLogger",
+        "state": {
+          "branch": null,
+          "revision": "1439885a7c6ac43cdec1bf96b83a0cbdb489244d",
+          "version": "6.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

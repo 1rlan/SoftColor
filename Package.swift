@@ -18,14 +18,21 @@ let package = Package(
             targets: ["SoftColorAnalyzer"]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/XCGLogger/XCGLogger", from: "6.1.0"),
+    ],
     targets: [
         .target(
             name: "SoftColor",
             dependencies: ["SoftColorAnalyzer"],
-            path: "Sources/SoftColor"
+            path: "Sources/SoftColor",
+            resources: [
+                .process("Resources")
+            ]
         ),
         .target(
             name: "SoftColorAnalyzer",
+            dependencies: ["XCGLogger"],
             path: "Sources/SoftColorAnalyzer"
         ),
     ],
