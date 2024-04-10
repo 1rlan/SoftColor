@@ -14,7 +14,7 @@ enum AnalyzeState {
 final class ColorAnalyzer {
     private enum Constants {
         static let colorsMatchThreshold = 4.5
-        static let saturationThreshold = 0.5
+        static let saturationThreshold = 0.8
     }
 
     private let state: AnalyzeState
